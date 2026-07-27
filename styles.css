@@ -569,3 +569,113 @@ h1 {
     padding: 42px 24px 28px;
   }
 }
+
+
+.dialog-gallery {
+  position: relative;
+  min-width: 0;
+  background: #ddd9d0;
+}
+
+.dialog-image {
+  transition: opacity 160ms ease;
+}
+
+.dialog-image.changing {
+  opacity: 0.35;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.55);
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+}
+
+.gallery-arrow:hover {
+  background: rgba(20, 20, 20, 0.72);
+}
+
+.gallery-arrow-left {
+  left: 16px;
+}
+
+.gallery-arrow-right {
+  right: 16px;
+}
+
+.gallery-counter {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.58);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  gap: 7px;
+  transform: translateX(-50%);
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.gallery-dot.active {
+  background: white;
+  transform: scale(1.25);
+}
+
+@media (max-width: 620px) {
+  .gallery-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery-arrow-left {
+    left: 10px;
+  }
+
+  .gallery-arrow-right {
+    right: 10px;
+  }
+
+  .gallery-counter {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .gallery-dots {
+    bottom: 13px;
+  }
+}

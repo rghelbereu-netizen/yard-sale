@@ -9,7 +9,10 @@
     "summary": "Intel i5, 8GB RAM, includes charger.",
     "description": "A compact and versatile Windows tablet in very good condition. Ideal for browsing, media, light office work or use as a secondary device.",
     "image": "images/surface-pro-8.jpg",
-    "collection": "Welling, London"
+    "collection": "Welling, London",
+    "images": [
+      "images/surface-pro-8.jpg"
+    ]
   },
   {
     "id": "oak-shoe-cabinet",
@@ -21,7 +24,10 @@
     "summary": "Oak-effect fluted cabinet with generous storage.",
     "description": "A stylish shoe cabinet with a warm oak finish and fluted front. Works well in a hallway or bedroom.",
     "image": "images/shoe-cabinet.jpg",
-    "collection": "Welling, London"
+    "collection": "Welling, London",
+    "images": [
+      "images/shoe-cabinet.jpg"
+    ]
   },
   {
     "id": "bathroom-vanity",
@@ -33,7 +39,10 @@
     "summary": "Modern floorstanding vanity with basin.",
     "description": "A contemporary bathroom vanity unit with integrated basin. Unused and ready for installation.",
     "image": "images/vanity.jpg",
-    "collection": "Welling, London"
+    "collection": "Welling, London",
+    "images": [
+      "images/vanity.jpg"
+    ]
   },
   {
     "id": "coffee-table",
@@ -45,7 +54,10 @@
     "summary": "Simple modern table with a clean profile.",
     "description": "A compact coffee table that suits modern or Scandinavian-style interiors.",
     "image": "images/coffee-table.jpg",
-    "collection": "Welling, London"
+    "collection": "Welling, London",
+    "images": [
+      "images/coffee-table.jpg"
+    ]
   },
   {
     "id": "desk-lamp",
@@ -57,7 +69,10 @@
     "summary": "Metal desk lamp with adjustable head.",
     "description": "A sturdy desk lamp with a minimal industrial design and adjustable head.",
     "image": "images/desk-lamp.jpg",
-    "collection": "Welling, London"
+    "collection": "Welling, London",
+    "images": [
+      "images/desk-lamp.jpg"
+    ]
   },
   {
     "id": "bluetooth-speaker",
@@ -69,6 +84,9 @@
     "summary": "Portable speaker with charging cable.",
     "description": "A portable Bluetooth speaker with clear sound and good battery life.",
     "image": "images/speaker.jpg",
-    "collection": "Welling, London"
+    "collection": "Welling, London",
+    "images": [
+      "images/speaker.jpg"
+    ]
   }
 ]

@@ -96,6 +96,10 @@ function renderItems() {
   });
 }
 
+let activeGalleryImages = [];
+let activeGalleryIndex = 0;
+let touchStartX = 0;
+
 function openItem(id) {
   const item = items.find(entry => entry.id === id);
   if (!item) return;
@@ -106,11 +110,42 @@ function openItem(id) {
     ? `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`
     : `https://wa.me/?text=${whatsappText}`;
 
+  activeGalleryImages = Array.isArray(item.images) && item.images.length
+    ? item.images
+    : [item.image];
+  activeGalleryIndex = 0;
+
   dialogContent.innerHTML = `
     <div class="dialog-layout">
-      <div class="dialog-image-wrap">
-        <img class="dialog-image" src="${item.image}" alt="${item.title}">
+      <div class="dialog-gallery" id="dialogGallery">
+        <div class="dialog-image-wrap">
+          <img
+            class="dialog-image"
+            id="dialogImage"
+            src="${activeGalleryImages[0]}"
+            alt="${item.title}, photo 1 of ${activeGalleryImages.length}">
+        </div>
+
+        ${activeGalleryImages.length > 1 ? `
+          <button class="gallery-arrow gallery-arrow-left" id="galleryPrev" aria-label="Previous photo">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" id="galleryNext" aria-label="Next photo">›</button>
+
+          <div class="gallery-counter" id="galleryCounter">
+            1 / ${activeGalleryImages.length}
+          </div>
+
+          <div class="gallery-dots" id="galleryDots" aria-label="Choose photo">
+            ${activeGalleryImages.map((_, index) => `
+              <button
+                class="gallery-dot ${index === 0 ? "active" : ""}"
+                data-gallery-index="${index}"
+                aria-label="View photo ${index + 1}">
+              </button>
+            `).join("")}
+          </div>
+        ` : ""}
       </div>
+
       <div class="dialog-details">
         <p class="eyebrow">${item.category} · ${item.status}</p>
         <h3>${item.title}</h3>
@@ -132,7 +167,67 @@ function openItem(id) {
     </div>
   `;
 
+  const gallery = document.querySelector("#dialogGallery");
+  const previousButton = document.querySelector("#galleryPrev");
+  const nextButton = document.querySelector("#galleryNext");
+
+  previousButton?.addEventListener("click", () => changeGalleryImage(-1, item.title));
+  nextButton?.addEventListener("click", () => changeGalleryImage(1, item.title));
+
+  document.querySelectorAll(".gallery-dot").forEach(dot => {
+    dot.addEventListener("click", () => {
+      activeGalleryIndex = Number(dot.dataset.galleryIndex);
+      updateGallery(item.title);
+    });
+  });
+
+  gallery?.addEventListener("touchstart", event => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  gallery?.addEventListener("touchend", event => {
+    const touchEndX = event.changedTouches[0].clientX;
+    const difference = touchEndX - touchStartX;
+
+    if (Math.abs(difference) < 45) return;
+    changeGalleryImage(difference > 0 ? -1 : 1, item.title);
+  }, { passive: true });
+
   dialog.showModal();
+}
+
+function changeGalleryImage(direction, itemTitle) {
+  if (activeGalleryImages.length < 2) return;
+
+  activeGalleryIndex =
+    (activeGalleryIndex + direction + activeGalleryImages.length) %
+    activeGalleryImages.length;
+
+  updateGallery(itemTitle);
+}
+
+function updateGallery(itemTitle) {
+  const image = document.querySelector("#dialogImage");
+  const counter = document.querySelector("#galleryCounter");
+
+  if (!image) return;
+
+  image.classList.add("changing");
+
+  window.setTimeout(() => {
+    image.src = activeGalleryImages[activeGalleryIndex];
+    image.alt = `${itemTitle}, photo ${activeGalleryIndex + 1} of ${activeGalleryImages.length}`;
+    image.classList.remove("changing");
+  }, 100);
+
+  if (counter) {
+    counter.textContent = `${activeGalleryIndex + 1} / ${activeGalleryImages.length}`;
+  }
+
+  document.querySelectorAll(".gallery-dot").forEach((dot, index) => {
+    dot.classList.toggle("active", index === activeGalleryIndex);
+    dot.setAttribute("aria-current", index === activeGalleryIndex ? "true" : "false");
+  });
 }
 
 searchInput.addEventListener("input", event => {
@@ -151,6 +246,21 @@ dialog.addEventListener("click", event => {
     event.clientY > bounds.bottom;
 
   if (outside) dialog.close();
+});
+
+
+document.addEventListener("keydown", event => {
+  if (!dialog.open || activeGalleryImages.length < 2) return;
+
+  const itemTitle = document.querySelector(".dialog-details h3")?.textContent || "Item";
+
+  if (event.key === "ArrowLeft") {
+    changeGalleryImage(-1, itemTitle);
+  }
+
+  if (event.key === "ArrowRight") {
+    changeGalleryImage(1, itemTitle);
+  }
 });
 
 const storedTheme = localStorage.getItem("yard-sale-theme");
