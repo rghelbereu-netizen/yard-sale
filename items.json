@@ -3,7 +3,7 @@
     "id": "surface-pro-8",
     "title": "Boho Ceiling Light",
     "price": "FREE",
-    "category": "Furniture",
+    "category": "Home",
     "condition": "Like New / Unused",
     "status": "Available",
     "summary": "Ceiling Light, Ecru/Brown, Ø 60 cm, Fabric",
@@ -14,7 +14,6 @@
       "images/ceillinglight-main.jpg",
       "images/ceillinglight-mainb.jpg",
       "images/ceillinglight-mainc.jpg",
-      "images/ceillinglight-maind.jpg",
       "images/ceillinglight-maine.jpg"
     ]
   },
@@ -22,7 +21,7 @@
     "id": "oak-shoe-cabinet",
     "title": "Islington Black Mirror",
     "price": "FREE",
-    "category": "Furniture",
+    "category": "Home",
     "condition": "Like New / Unused",
     "status": "Available",
     "summary": "Black Metal Frame 150cm x 85cm",
@@ -40,7 +39,7 @@
     "id": "bathroom-vanity",
     "title": "Sutton Black Mirror",
     "price": "FREE",
-    "category": "Furniture",
+    "category": "Home",
     "condition": "Like New / Unused",
     "status": "Available",
     "summary": "Black Wood Frame 150cm × 65cm",
@@ -50,52 +49,79 @@
     "images": [
       "images/sutton-main.jpg",
       "images/sutton-mainb.jpg",
-      "images/sutton-mainc.jpg"
+      "images/sutton-mainc.jpg",
+      "images/sutton-maind.jpg"
     ]
   },
   {
     "id": "coffee-table",
-    "title": "Minimal Coffee Table",
-    "price": 45,
+    "title": "STÄLL Shoe Cabinet",
+    "price": "FREE",
     "category": "Furniture",
-    "condition": "Good",
-    "status": "available",
-    "summary": "Simple modern table with a clean profile.",
-    "description": "A compact coffee table that suits modern or Scandinavian-style interiors.",
-    "image": "images/coffee-table.jpg",
+    "condition": "Used",
+    "status": "Available",
+    "summary": "Shoe cabinet with 3 compartments, white, 79x29x148 cm",
+    "description": "Used and no original packaging. Needs some cleaning. It also comes with 2 pair of feet... the ones in the last photo were cut from a white chair due to the skriting board in my old place being higher than the original feet. The original feet are also included. STÄLL shoe cabinet takes care of your footwear in the best way. It helps you stay organised in the hallway and also saves important floor space.",
+    "image": "images/stall-main.jpg",
     "collection": "Welling, London",
     "images": [
-      "images/coffee-table.jpg"
+      "images/stall-main.jpg",
+      "images/stall-mainb.jpg",
+      "images/stall-mainc.jpg",
+      "images/stall-maind.jpg"
     ]
   },
   {
     "id": "desk-lamp",
-    "title": "Adjustable Desk Lamp",
-    "price": 20,
-    "category": "Home",
-    "condition": "Very good",
-    "status": "sold",
-    "summary": "Metal desk lamp with adjustable head.",
-    "description": "A sturdy desk lamp with a minimal industrial design and adjustable head.",
-    "image": "images/desk-lamp.jpg",
+    "title": "GNEDBY Shelving Units",
+    "price": "FREE",
+    "category": "Furniture",
+    "condition": "Used",
+    "status": "Available",
+    "summary": "5x Shelving units, black, 202 cm",
+    "description": "Used and no original packaging. Needs some cleaning. One of them has a cutout I've made to reach a socket (last photo), but it can be perfectly hidden behind dvds/blurays/books/etc. GNEDBY is a collector’s dream, a slim and shallow shelving unit that swallows a lot. Perfect for CDs, DVDs or other small things you hold dear.",
+    "image": "images/gnedby-main.jpg",
     "collection": "Welling, London",
     "images": [
-      "images/desk-lamp.jpg"
+      "images/gnedby-main.jpg",
+      "images/gnedby-mainb.jpg",
+      "images/gnedby-mainc.jpg",
+      "images/gnedby-maind.jpg"
     ]
   },
   {
     "id": "bluetooth-speaker",
-    "title": "Bluetooth Speaker",
-    "price": 30,
+    "title": "LACK Floating White Shelves",
+    "price": "FREE",
     "category": "Electronics",
-    "condition": "Good",
-    "status": "available",
-    "summary": "Portable speaker with charging cable.",
-    "description": "A portable Bluetooth speaker with clear sound and good battery life.",
-    "image": "images/speaker.jpg",
+    "condition": "Used",
+    "status": "Available",
+    "summary": "2x Wall shelves, white, 110x26 cm",
+    "description": "Used and no original packaging. Needs some cleaning. This sleek wall shelf gets the job done in a discreet and almost invisible way. The hidden suspension brackets make it blend into the wall – highlighting your favourite items.",
+    "image": "images/lack-main.jpg",
     "collection": "Welling, London",
     "images": [
-      "images/speaker.jpg"
+      "images/lack-main.jpg",
+      "images/lack-mainb.jpg",
+      "images/lack-mainc.jpg",
+      "images/lack-maind.jpg"
+    ]
+  },
+  {
+    "id": "bluetooth-speaker",
+    "title": EKBY GALLO Wall Shelves",
+    "price": "FREE",
+    "category": "Furniture",
+    "condition": "Used",
+    "status": "Available",
+    "summary": "Wall shelf combination white/wood",
+    "description": "Used and no original packaging. Needs some cleaning. Create your own personal wall shelf using these brackets. They are designed to fit well together when you connect two brackets in a larger combination and can also be mounted to create different expressions.",
+    "image": "images/ekby-main.jpg",
+    "collection": "Welling, London",
+    "images": [
+      "images/ekby-main.jpg",
+      "images/ekby-mainb.jpg",
+      "images/ekby-mainc.jpg"
     ]
   }
 ]
