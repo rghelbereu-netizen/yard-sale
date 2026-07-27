@@ -1,4 +1,14 @@
 
+function normalizeStatus(status) {
+  return String(status || "").trim().toLowerCase();
+}
+
+function formatPriceText(price) {
+  if (typeof price === "number") return `£${price}`;
+  if (typeof price === "string") return price.trim();
+  return "";
+}
+
 function formatPrice(price) {
   if (typeof price === "number") return `£${price}`;
   if (typeof price === "string") {
@@ -84,7 +94,7 @@ function renderItems() {
       <article class="item-card" tabindex="0" data-id="${item.id}" aria-label="View ${item.title}">
         <div class="item-image-wrap">
           <img class="item-image" src="${item.image}" alt="${item.title}" loading="lazy">
-          <span class="status-badge ${item.status}">${item.status}</span>
+          <span class="status-badge ${normalizeStatus(item.status)}">${item.status}</span>
         </div>
         <div class="item-content">
           <div class="item-topline">
@@ -117,8 +127,8 @@ function openItem(id) {
   const item = items.find(entry => entry.id === id);
   if (!item) return;
 
-  const unavailable = item.status !== "available";
-  const whatsappText = encodeURIComponent(`Hi! I'm interested in the ${item.title} listed for ${formatPrice(item.price)}. Is it still available?`);
+  const unavailable = normalizeStatus(item.status) !== "available";
+  const whatsappText = encodeURIComponent(`Hi! I'm interested in the ${item.title} listed for ${formatPriceText(item.price)}. Is it still available?`);
   const whatsappHref = WHATSAPP_NUMBER
     ? `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`
     : `https://wa.me/?text=${whatsappText}`;
