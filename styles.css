@@ -679,3 +679,11 @@ h1 {
     bottom: 13px;
   }
 }
+
+
+.price-free{
+  display:inline-block;
+  color:#1b7f3a;
+  font-weight:700;
+  letter-spacing:.02em;
+}

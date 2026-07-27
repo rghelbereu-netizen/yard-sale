@@ -1,17 +1,20 @@
 [
   {
     "id": "surface-pro-8",
-    "title": "Surface Pro 8",
-    "price": 350,
-    "category": "Electronics",
-    "condition": "Very good",
-    "status": "available",
-    "summary": "Intel i5, 8GB RAM, includes charger.",
-    "description": "A compact and versatile Windows tablet in very good condition. Ideal for browsing, media, light office work or use as a secondary device.",
-    "image": "images/surface-pro-8.jpg",
+    "title": "Boho Ceiling Light",
+    "price": "FREE",
+    "category": "Furniture",
+    "condition": "Like New / Never used",
+    "status": "Available",
+    "summary": "Ceiling Light, Ecru/Brown, Ø 60 cm, Fabric",
+    "description": "In original package and unused. The Boho ceiling light combines natural materials such as cotton, metal and jute in a harmonious design that gives any room a warm and inviting atmosphere. The combination of cream and brown tones creates a subtle elegance that blends seamlessly into bedrooms, living rooms, hallways or dining rooms. Thanks to the option of controlling the light via an external dimmer, the light intensity can be individually adjusted to create the perfect lighting for every occasion.",
+    "image": "images/ceillinglight-main.jpg",
     "collection": "Welling, London",
     "images": [
-      "images/surface-pro-8.jpg"
+      "images/ceillinglight-main.jpg",
+      "images/ceillinglight-mainb.jpg",
+      "images/ceillinglight-mainc.jpg",
+      "images/ceillinglight-maind.jpg"
     ]
   },
   {

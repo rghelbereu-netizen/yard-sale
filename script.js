@@ -1,4 +1,17 @@
-const WHATSAPP_NUMBER = "447557651323"; // Add your number, e.g. 447700900000
+
+function formatPrice(price) {
+  if (typeof price === "number") return `£${price}`;
+  if (typeof price === "string") {
+    const value = price.trim();
+    if (value.toUpperCase() === "FREE") {
+      return '<span class="price-free">FREE</span>';
+    }
+    return value;
+  }
+  return "";
+}
+
+const WHATSAPP_NUMBER = ""; // Add your number, e.g. 447700900000
 
 let items = [];
 let selectedCategory = "All";
@@ -76,7 +89,7 @@ function renderItems() {
         <div class="item-content">
           <div class="item-topline">
             <h3 class="item-title">${item.title}</h3>
-            <p class="item-price">£${item.price}</p>
+            <p class="item-price">${formatPrice(item.price)}</p>
           </div>
           <p class="item-meta">${item.summary}</p>
           <span class="item-category">${item.category}</span>
@@ -105,7 +118,7 @@ function openItem(id) {
   if (!item) return;
 
   const unavailable = item.status !== "available";
-  const whatsappText = encodeURIComponent(`Hi! I'm interested in the ${item.title} listed for £${item.price}. Is it still available?`);
+  const whatsappText = encodeURIComponent(`Hi! I'm interested in the ${item.title} listed for ${formatPrice(item.price)}. Is it still available?`);
   const whatsappHref = WHATSAPP_NUMBER
     ? `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`
     : `https://wa.me/?text=${whatsappText}`;
@@ -149,7 +162,7 @@ function openItem(id) {
       <div class="dialog-details">
         <p class="eyebrow">${item.category} · ${item.status}</p>
         <h3>${item.title}</h3>
-        <p class="dialog-price">£${item.price}</p>
+        <p class="dialog-price">${formatPrice(item.price)}</p>
         <p class="dialog-description">${item.description}</p>
         <ul class="dialog-facts">
           <li><span>Condition</span><strong>${item.condition}</strong></li>
