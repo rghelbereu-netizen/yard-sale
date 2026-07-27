@@ -37,7 +37,7 @@ const dialogContent = document.querySelector("#dialogContent");
 const dialogClose = document.querySelector("#dialogClose");
 const themeToggle = document.querySelector("#themeToggle");
 
-fetch("items.json?v=4")
+fetch("items.json")
   .then(response => {
     if (!response.ok) throw new Error("Could not load items.json");
     return response.json();
