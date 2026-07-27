@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = ""; // Add your number, e.g. 447700900000
+const WHATSAPP_NUMBER = "447557651323"; // Add your number, e.g. 447700900000
 
 let items = [];
 let selectedCategory = "All";
