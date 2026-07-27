@@ -3,17 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yard Sale</title>
+  <meta name="description" content="A curated selection of furniture, electronics, home items and more.">
+  <title>Radu's Yard Sale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="page">
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Back to top">
+      <span class="brand-mark">R</span>
+      <span>Radu's Yard Sale</span>
+    </a>
+
+    <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode">
+      <span aria-hidden="true">◐</span>
+    </button>
+  </header>
+
+  <main>
     <section class="hero">
-      <p class="eyebrow">COMING SOON</p>
-      <h1>Yard Sale</h1>
-      <p class="intro">Furniture, electronics, home items and more.</p>
-      <p class="note">The full catalogue will be added shortly.</p>
+      <div class="hero-copy">
+        <p class="eyebrow">A carefully curated clear-out</p>
+        <h1>Good things,<br>looking for new homes.</h1>
+        <p class="hero-text">
+          Furniture, electronics, homeware and assorted treasures.
+          Everything listed here is available for collection unless marked otherwise.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <p class="hero-card-label">How it works</p>
+        <ol>
+          <li>Browse the catalogue.</li>
+          <li>Open an item for details.</li>
+          <li>Message me on WhatsApp.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="catalogue" aria-labelledby="catalogueTitle">
+      <div class="catalogue-heading">
+        <div>
+          <p class="eyebrow">Available now</p>
+          <h2 id="catalogueTitle">The collection</h2>
+        </div>
+        <p id="resultCount" class="result-count"></p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span class="sr-only">Search items</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
+          </svg>
+          <input id="searchInput" type="search" placeholder="Search items">
+        </label>
+
+        <div id="categoryFilters" class="filters" aria-label="Filter by category"></div>
+      </div>
+
+      <div id="itemsGrid" class="items-grid"></div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <p class="empty-title">Nothing found.</p>
+        <p>Try another search or category.</p>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>Collection from Welling, London.</p>
+    <p>Items are sold as seen unless otherwise stated.</p>
+  </footer>
+
+  <dialog id="itemDialog" class="item-dialog">
+    <button id="dialogClose" class="dialog-close" aria-label="Close item details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="script.js"></script>
 </body>
 </html>
